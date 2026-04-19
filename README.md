@@ -1,90 +1,137 @@
 # Sistema ERP - Proyecto Académico - COFFE CORE - A32
 <img width="1600" height="1600" alt="image" src="https://github.com/user-attachments/assets/f8cc271f-f275-4f4b-a493-3e0e03e91043" />
 
-Este repositorio contiene el desarrollo del modelo de base de datos para un sistema ERP (Enterprise Resource Planning), enfocado en la gestión integral de los procesos de una empresa. El proyecto se llevó a cabo como parte de un ejercicio académico, aplicando metodologías ágiles (Scrum) y buenas prácticas de desarrollo de software.
+> Sistema ERP académico desarrollado con metodología ágil Scrum, enfocado en la gestión integral de procesos empresariales.
+
+![GitHub branches](https://img.shields.io/badge/branches-2-blue)
+![GitHub commits](https://img.shields.io/badge/commits-35-green)
+![Sprint](https://img.shields.io/badge/sprint-2-orange)
+![Status](https://img.shields.io/badge/status-en%20desarrollo-yellow)
 
 ---
 
-## Sprint 0 – Planeación del Proyecto
+## 📋 Descripción
 
-El Sprint 0 tuvo como objetivo definir la visión, alcance y planificación inicial del sistema ERP antes de comenzar el desarrollo técnico. Durante esta fase se realizaron las siguientes actividades:
+**ERP Coffee Core** es un sistema de Planificación de Recursos Empresariales desarrollado como proyecto académico. Su objetivo es centralizar y automatizar los procesos de una organización mediante módulos independientes e integrados entre sí.
 
-### 1. Definición de la Visión y Alcance
-- Se identificó el problema principal: la necesidad de un sistema centralizado para la gestión de procesos empresariales.
-- Se definió el usuario objetivo: pequeñas y medianas empresas que requieren control de inventario, ventas, compras, finanzas y recursos humanos.
-- Plantilla de visión utilizada:  
-  > "Para [usuario] que [necesidad], nuestro sistema ERP [valor] a diferencia de [alternativas], [diferenciador]".
-
-### 2. Identificación de Personas y Roles
-- Analista de Compras
-- Empleado de Almacén
-- Gerente de Ventas
-- Contador
-- Administrador del sistema
-
-### 3. Levantamiento de Requerimientos Iniciales
-- Mapeo de los procesos principales de la empresa.
-- Identificación de datos críticos y relaciones entre módulos.
-- Priorización de funcionalidades para el primer incremento del sistema.
-
-### 4. Planificación de Releases y Sprints
-- Sprint 1: Estructura de la base de datos y triggers iniciales.
-- Sprint 2: Integración de interfaces y pruebas funcionales.
-
-### 5. Documentación de Trazabilidad
-- Generación del backlog inicial de historias de usuario.
-- Establecimiento de tablero Scrum para gestión de tareas y seguimiento de avances.
+El sistema está orientado a **pequeñas y medianas empresas** que requieren control de inventario, ventas, compras, finanzas y recursos humanos en una sola plataforma.
 
 ---
 
-## Sprint 1 – Desarrollo de la Base de Datos
+## 🏗️ Estructura del Repositorio
 
-Durante el Sprint 1 se implementó la estructura inicial de la base de datos del ERP, enfocándose en garantizar una correcta normalización y relaciones entre los módulos.
-
-### 1. Administración
-- **Sucursales**: Tabla para almacenar información de cada sucursal de la empresa, incluyendo dirección, teléfono y gerente responsable.
-- **Usuarios**: Tabla de usuarios con roles y permisos, vinculados a las sucursales correspondientes.
-
-### 2. Clientes (CRM)
-- Registro de clientes con datos de contacto, historial de compras y segmentación.
-- Implementación de relaciones con módulos de ventas para trazabilidad de transacciones.
-
-### 3. Proveedores
-- Tabla de proveedores con información de contacto y condiciones de pago.
-- Relación con el módulo de compras para controlar órdenes y pagos.
-
-### 4. Recursos Humanos
-- Registro de empleados, roles, salarios y horarios.
-- Integración con módulos de finanzas y administración para cálculo de nómina y beneficios.
-
-### 5. Inventario y Productos
-- Tablas de productos con información detallada (código, nombre, categoría, precio, stock).
-- Registro de movimientos de inventario y control de existencias.
-
-### 6. Compras
-- Tablas para órdenes de compra, recepción de productos y control de pagos a proveedores.
-- Relación directa con el inventario para actualización automática de stock.
-
-### 7. Ventas (POS)
-- Registro de ventas y transacciones por sucursal.
-- Integración con el módulo de clientes y el inventario para control en tiempo real.
-
-### 8. Finanzas
-- Registro de ingresos, egresos y movimientos financieros.
-- Triggers automáticos para actualizar balances y detectar inconsistencias.
-
-### 9. Triggers y Automatizaciones
-- Control automático de inventario al realizar compras o ventas.
-- Generación automática de movimientos financieros relacionados a cada transacción.
-- Validaciones para mantener integridad referencial y consistencia de datos.
+```text
+erp-system-coffecore-a32/
+├── database/
+│   └── scripts/          # Scripts SQL de creación de tablas por módulo
+├── documentación/        # Documentación del proyecto (arc42)
+├── sprint/               # Entregables y evidencias por sprint
+├── src/
+│   └── ERPSystem/        # Código fuente principal de la aplicación
+├── .gitignore
+└── README.md
+```
 
 ---
 
-## Gestión del Proyecto
-- Se utilizó **GitHub** como plataforma de control de versiones.
-- Los cambios se integraron mediante **Pull Requests** y revisión de código.
-- Se documentaron los avances y decisiones técnicas para facilitar la trazabilidad.
+## 🧩 Módulos del Sistema
+
+| Módulo | Descripción |
+|--------|-------------|
+| **EP-ADM** | Administración de sucursales, usuarios y roles |
+| **EP-CRM** | Gestión de clientes y trazabilidad de compras |
+| **EP-PROV** | Gestión de proveedores y condiciones de pago |
+| **EP-RRHH** | Registro de empleados, roles, salarios y horarios |
+| **EP-INV** | Control de inventario, productos y movimientos de stock |
+| **EP-COMP** | Órdenes de compra y recepción de productos |
+| **EP-VEN** | Registro de ventas y transacciones por sucursal |
+| **EP-FIN** | Ingresos, egresos y movimientos financieros |
 
 ---
 
-Este README sirve como referencia del estado actual del proyecto y documentación para futuros desarrollos e integraciones de los siguientes sprints.
+## 🚀 Sprints
+
+### Sprint 0 — Planeación del Proyecto
+
+- Definición de visión y alcance del sistema
+- Identificación de personas y roles (Analista de Compras, Gerente de Ventas, Contador, etc.)
+- Levantamiento de requerimientos y mapeo de procesos
+- Planificación de releases y generación del backlog inicial
+
+### Sprint 1 — Base de Datos
+
+- Implementación de la estructura de base de datos normalizada
+- Creación de tablas por módulo con claves primarias y foráneas
+- Operaciones CRUD básicas para cada módulo
+- Triggers automáticos para control de inventario e integridad financiera
+
+### Sprint 2 — Interfaces y Lógica de Negocio *(en progreso)*
+
+- Desarrollo de vistas por módulo
+- Implementación de lógica de negocio en capa de servicios
+- Integración entre módulos
+- Validaciones en capa de aplicación
+
+---
+
+## ⚙️ Tecnologías Utilizadas
+
+| Capa | Tecnología |
+|------|------------|
+| Backend | ASP.NET Core (C#) |
+| ORM | Entity Framework Core |
+| Base de Datos | SQL Server |
+| Autenticación | ASP.NET Identity |
+| Frontend | Razor Views + Bootstrap |
+| Control de Versiones | Git + GitHub |
+
+---
+
+## 🗂️ Gestión del Proyecto
+
+- Metodología: **Scrum**
+- Control de versiones: **GitHub** con ramas `main` y `develop`
+- Integración de cambios mediante **Pull Requests**
+- Documentación de arquitectura: **arc42**
+
+---
+
+## 👥 Roles del Equipo
+
+| Rol | Responsabilidad |
+|-----|----------------|
+| Desarrollador Full Stack | Implementación de módulos, vistas y lógica de negocio |
+| Diseñador de Base de Datos | Modelo relacional, scripts SQL y migraciones |
+| Documentador arc42 | Mantenimiento de la documentación de arquitectura |
+| Scrum Master | Coordinación de sprints y seguimiento del backlog |
+
+---
+
+## 📄 Documentación
+
+La documentación completa de arquitectura del sistema se encuentra en la carpeta [`/documentación`](./documentación/) siguiendo la plantilla **arc42**.
+
+---
+
+## 📌 Estado del Proyecto
+
+Actualmente el proyecto cuenta con:
+
+- Estructura inicial del repositorio definida
+- Base de datos modelada por módulos
+- Scripts SQL organizados en la carpeta `database/scripts`
+- Documentación del proyecto en la carpeta `documentación`
+- Evidencias y avances de sprint en la carpeta `sprint`
+- Código fuente principal en `src/ERPSystem`
+
+---
+
+## 🔗 Repositorio
+
+Puedes acceder al repositorio del proyecto aquí:
+
+[ERP Coffee Core - GitHub](https://github.com/Alexuwu012/erp-system-coffecore-a32)
+
+---
+
+> Proyecto académico — Todos los derechos reservados © 2025 ERP Coffee Core A32
